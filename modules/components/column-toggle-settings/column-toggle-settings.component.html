@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-sm-10 h-24">
+		<ng-container *ngIf="isUpdateVisible()">
+			<clr-icon role="button" *ngIf="model.saveNewTemplate" title="Undo" class="mr-025" shape="undo" (click)="model.saveNewTemplate=false"></clr-icon>
+			<clr-icon role="button" shape="floppy" title="Save" *ngIf="!isSaveDisabled()" (click)="saveEvent()"></clr-icon>
+			<clr-icon shape="floppy" *ngIf="isSaveDisabled()" title="Save" class="disabled"></clr-icon>
+		</ng-container>
+	</div>
+</div>
+<div *ngIf="model.saveNewTemplate">
+	<div class="row">
+		<div class="clr-col-10">
+			<input type="text" [(ngModel)]="model.newTemplateName" placeholder="Template name" class="clr-input">
+        </div>
+    </div>
+</div>
+<div *ngIf="!model.saveNewTemplate">
+    <div class="row">
+        <div class="clr-col-10">
+            <div class="select">
+                <select id="selects_2" [(ngModel)]="model.selectedTemplate" (change)="logSelected()">
+                    <option [ngValue]="model.defaultTemplate">Default
+                    </option>
+                    <option *ngFor="let template of model.getColumnTemplates()" [ngValue]="template">
+                        {{template.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="clr-col-2 text-nowrap px-0">
+            <clr-icon role="button" class="mr-10px" shape="plus-circle" title="Create"
+                (click)="model.saveNewTemplate=true"></clr-icon>
+            <clr-icon role="button" shape="trash" title="Delete" *ngIf="isUpdateVisible()" (click)="this.deleteTemplate.emit()"></clr-icon>
+        </div>
+    </div>
+</div>

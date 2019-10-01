@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header class="header-6">
+  <div class="branding">
+      <a href="..." class="nav-link">
+          <clr-icon shape="vm-bug"></clr-icon>
+          <span class="title"> <strong>IGTB</strong></span>
+      </a>
+  </div>
+  <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger aria-label="open user menu">
+            <clr-icon shape="user"></clr-icon>
+            <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom">
+            <a href="..." clrDropdownItem>About</a>
+            <a href="..." clrDropdownItem>Preferences</a>
+            <a href="..." clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+        <a href="..." class="nav-link nav-icon" aria-label="settings">
+          <clr-icon shape="file"></clr-icon>
+        </a>
+        <a href="..." class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="chat-bubble"></clr-icon>
+        </a>
+        <a href="..." class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="line-chart"></clr-icon>
+        </a>
+        <a href="..." class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="clipboard"></clr-icon>
+        </a>
+    </clr-dropdown>
+  </div>
+  </header>
+  <header class="subnav header-5">
+    <div class="clrPosition">
+      <clr-dropdown [clrCloseMenuOnItemClick]="false" clrPosition="left">
+        <button clrDropdownTrigger aria-label="Dropdown button">
+            <clr-icon shape="bars" size="36" class="is-inverse"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen>
+            <label class="dropdown-header" aria-hidden="true">Dropdown header</label>
+            <div clrDropdownItem routerLink="grid-data" routerLinkActive="active">Action 1</div>
+            <div clrDropdownItem routerLink="" routerLinkActive="active">Action 2</div>
+            <div class="dropdown-divider" role="separator" aria-hidden="true"></div>
+            <div clrDropdownItem>Link 1</div>
+            <div clrDropdownItem>Link 2</div>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </header>
+
+
+<router-outlet></router-outlet>

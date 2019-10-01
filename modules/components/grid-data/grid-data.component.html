@@ -1,0 +1,63 @@
+<div class="content-header">
+	<h2>Grid Component</h2>
+</div>
+<div class="content-container">
+	<div class="content-area">
+		<clr-datagrid>
+			<clr-dg-action-bar>
+			</clr-dg-action-bar>
+
+			<clr-dg-column clrDgField="col-1">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col1')}">
+					Col 1
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-column clrDgField="col-2">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col2')}">
+					Col 2
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-column clrDgField="col-3">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col3')}">
+					Col 3
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-column clrDgField="col-4">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col4')}">
+					Col 4
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-column clrDgField="col-5">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col5')}">
+					Col 5
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-column clrDgField="col-6">
+				<ng-container *clrDgHideableColumn="{hidden: isColumnHidden('col6')}">
+					Col 6
+				</ng-container>
+			</clr-dg-column>
+			<clr-dg-row *ngFor="let row of rows" class="fix-with-text">
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+				<clr-dg-cell role="button">{{row.a}}</clr-dg-cell>
+
+			</clr-dg-row>
+			<clr-dg-footer>
+				<clr-dg-column-toggle>
+					<clr-dg-column-toggle-title class="w-100">
+						<app-column-toggle-settings [(model)]="columnToggleSettingsModel" (saveTemplate)="saveTemplate()" (deleteTemplate)="deleteTemplate()">
+						</app-column-toggle-settings>
+
+					</clr-dg-column-toggle-title>
+					<clr-dg-column-toggle-button>
+						Select all!
+					</clr-dg-column-toggle-button>
+				</clr-dg-column-toggle>
+			</clr-dg-footer>
+		</clr-datagrid>
+	</div>
+</div>
